@@ -1,0 +1,41 @@
+package com.company;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        ArrayList<String> aList = new ArrayList<String>();
+        aList.add("I Love Python, Python in Easiest Language");
+        aList.add("1@2@3@4@5");
+        System.out.println("Initial Array list is:-" + aList);
+
+        System.out.println("Write any Sentence:");
+        Scanner ip = new Scanner(System.in);
+        String s1 =ip.nextLine();
+        aList.add(s1);
+        String a1[] = s1.split(" ");
+        for(int i=0;i<a1.length;i++)
+        {
+            System.out.println("Array Elements:-"+ a1[i]);
+        }
+        System.out.println("Second last element of the String is:-" + a1[a1.length-2]);
+        System.out.println("New Array list is:-" + aList);
+
+        String s2= aList.get(0);
+        System.out.println("Original String is: " + s2);
+        String s2_new= s2.replace("Python", "Java");
+        System.out.println("Modified Stirng is:" + s2_new);
+        aList.set(0,s2_new);
+        System.out.println("Modified List: " + aList);
+
+        String s3= aList.get(1);
+        System.out.println("Original String is: " + s3);
+        String a2[] = s3.split("@");
+        for(int j=0;j<a2.length;j++)
+        {
+            System.out.println("Splitted elements are:- " + a2[j]);
+        }
+    }
+}
