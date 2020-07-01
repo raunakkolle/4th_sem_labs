@@ -1,0 +1,46 @@
+package com.company;
+import java.util.*;
+public class Complex {
+
+
+    //write your code here
+    float real, imag;
+
+    Complex(float r, float i) {
+        real = r;
+        imag = i;
+    }
+
+    public static Complex sum(Complex a, Complex b) {
+        Complex sum = new Complex(0, 0);
+        sum.real = a.real + b.real;
+        sum.imag = a.imag + b.imag;
+        return sum;
+    }
+
+    public static Complex diff(Complex a, Complex b) {
+        Complex diff = new Complex(0, 0);
+        diff.real = a.real - b.real;
+        diff.imag = a.imag - b.imag;
+        return diff;
+    }
+
+
+    public static void main(String[] args) {
+        Scanner sn = new Scanner(System.in);
+        System.out.println("Enter the two complex numbers");
+        float r1 = sn.nextInt(), r2 = sn.nextInt(), i1 = sn.nextInt(), i2 = sn.nextInt();
+        System.out.println("The first complex number is" + r1 +"+"+ i1 + "i");
+        System.out.println("The second complex number is" + r2 + "+"+i2 + "i");
+        Complex C1 = new Complex(r1, i1);
+        Complex C2 = new Complex(r2, i2);
+        Complex sum = sum(C1, C2);
+        Complex diff = diff(C1, C2);
+        System.out.println("The sum of the two complex numbers is:" + sum.real +"+"+ sum.imag + "i");
+        if (diff.imag > 0)
+            System.out.println("The differnece of the two complex numbers is:"+diff.real+"+"+diff.imag);
+        else
+            System.out.println("The differnece of the two complex numbers is:"+diff.real+diff.imag+"i");
+
+    }
+}
